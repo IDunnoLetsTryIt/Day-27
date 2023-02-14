@@ -1,8 +1,10 @@
 <?php
+// phpinfo();
 
 require_once 'DBBlackbox.php';
 require_once 'Song.php';
 require_once 'Session.php';
+require_once 'helpers.php';
 
 // start the session
 $session = Session::instance();
@@ -43,9 +45,15 @@ $song = find($id, 'Song');
     </div>
 <?php endif; ?>
 <?php if ($error_messages) : ?>
+    <style>
+        .error-message {
+            background-color: #e34234;
+            padding: 1rem;
+        }
+        </style>
     <?php foreach($error_messages as $input_name => $errors) : ?>
         <?php foreach($errors as $error) :?>
-            <div class="error_message">
+            <div class="error-message">
                 <?=$error?>
             </div>
             <?php endforeach; ?>

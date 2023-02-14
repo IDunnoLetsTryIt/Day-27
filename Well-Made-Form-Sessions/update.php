@@ -5,6 +5,7 @@
 require_once 'DBBlackbox.php';
 require_once 'Song.php';
 require_once 'Session.php';
+// session_start();
 
 // find the ID of the record we want to edit in the request
 $id = $_GET['id'];
